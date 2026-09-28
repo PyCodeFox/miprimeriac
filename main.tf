@@ -11,7 +11,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "mi_cubo_de_prueba" {
-  bucket        = "mi-primer-bucket-terraform-2026-rora" 
-  force_destroy = true
+resource "aws_vpc" "red_de_prueba" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "mi-vpc-terraform"
+  }
 }
